@@ -1,6 +1,7 @@
 package colas;
 
 import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -52,9 +53,11 @@ public class Colas extends javax.swing.JFrame {
 
     public double nEle() {
         double proba = 0;
-        try {
+        try
+        {
             proba = (1 - (y() / u())) * Math.pow((y() / u()), Double.parseDouble(jT_nEle.getText()));
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             return 0.0;
         }
         return proba;
@@ -116,11 +119,13 @@ public class Colas extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jL_ProbabiN = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
+        jL_titulo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 255));
 
@@ -144,9 +149,8 @@ public class Colas extends javax.swing.JFrame {
                 .addGap(209, 209, 209))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 490));
-
-        jP_c1.setBackground(new java.awt.Color(204, 204, 204));
+        jP_c1.setBackground(new java.awt.Color(255, 255, 255));
+        jP_c1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 3, 12)); // NOI18N
@@ -164,17 +168,10 @@ public class Colas extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         jP_c1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 100, 14));
 
-        jT_n.setBackground(new java.awt.Color(255, 255, 103));
         jT_n.setBorder(null);
         jP_c1.add(jT_n, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 210, -1));
 
-        jT_atencion.setBackground(new java.awt.Color(255, 255, 103));
         jT_atencion.setBorder(null);
-        jT_atencion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jT_atencionActionPerformed(evt);
-            }
-        });
         jP_c1.add(jT_atencion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 189, -1));
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 3, 14)); // NOI18N
@@ -203,40 +200,51 @@ public class Colas extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Sitka Text", 3, 14)); // NOI18N
         jLabel10.setText("WQ:");
-        jP_c1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 30, 20));
+        jP_c1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, 20));
 
         jT_LQ.setBorder(null);
+        jT_LQ.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.add(jT_LQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 110, -1));
 
         jT_Y.setBorder(null);
+        jT_Y.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.add(jT_Y, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 120, -1));
 
         jT_U.setBorder(null);
+        jT_U.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.add(jT_U, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 120, -1));
 
         jT_P.setBorder(null);
+        jT_P.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.add(jT_P, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 120, -1));
 
         jT_LS.setBorder(null);
+        jT_LS.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.add(jT_LS, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 120, -1));
 
         jT_WS.setBorder(null);
+        jT_WS.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.add(jT_WS, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 110, -1));
 
         jT_WQ.setBorder(null);
+        jT_WQ.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.add(jT_WQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 110, -1));
 
-        jButton1.setText("Calcular");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gua.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jP_c1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, -1));
+        jP_c1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 347, 139, 41));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel3.setText("Media de llegada por Hora =");
-        jP_c1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 160, -1));
+        jP_c1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel11.setText("Media de servicio o Atencion =");
@@ -267,13 +275,13 @@ public class Colas extends javax.swing.JFrame {
         jP_c1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 250, 20));
 
         jT_0.setBorder(null);
+        jT_0.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jP_c1.add(jT_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 90, -1));
 
         jLabel18.setFont(new java.awt.Font("Sitka Text", 3, 12)); // NOI18N
         jLabel18.setText("Tiempo (minutos):");
         jP_c1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, -1, -1));
 
-        jT_tiempo.setBackground(new java.awt.Color(255, 255, 103));
         jT_tiempo.setBorder(null);
         jP_c1.add(jT_tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 100, -1));
 
@@ -284,7 +292,6 @@ public class Colas extends javax.swing.JFrame {
         jLabel20.setText("Probabilidad de que haya N elementos en la cola =");
         jP_c1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 290, -1));
 
-        jT_nEle.setBackground(new java.awt.Color(255, 255, 103));
         jT_nEle.setBorder(null);
         jP_c1.add(jT_nEle, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 40, -1));
 
@@ -299,7 +306,48 @@ public class Colas extends javax.swing.JFrame {
         jLabel19.setText("Probabilidad de que el Sistema este vacio =");
         jP_c1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 250, 20));
 
-        jPanel1.add(jP_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 680, 420));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/limp.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jP_c1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 347, 155, 49));
+
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        jP_c1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 44, 14));
+
+        jL_titulo1.setFont(new java.awt.Font("Sitka Text", 3, 24)); // NOI18N
+        jL_titulo1.setText("INVESTIGACION DE OPERACIONES");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jP_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jL_titulo1)
+                        .addGap(148, 148, 148))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jL_titulo1)
+                .addGap(26, 26, 26)
+                .addComponent(jP_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -319,27 +367,50 @@ public class Colas extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DecimalFormat decimal = new DecimalFormat("#.###");
-        //jT_Y.setText(decimal.format(Double.parseDouble(jT_n.getText()) / Double.parseDouble(jT_tiempo.getText())));
-        jT_Y.setText(decimal.format(y()));
-        jT_U.setText(decimal.format((Double.parseDouble(jT_atencion.getText()) / Double.parseDouble(jT_tiempo.getText()))));
-        jT_P.setText(decimal.format((p() * 100)) + " %");
-        jT_LS.setText(decimal.format(ls()));
-        jT_WS.setText(decimal.format(ws()));
-        jL_ProbabiN.setText(decimal.format((nEle() * 100)) + " %");
-        if (Integer.parseInt(jT_n.getText()) > Integer.parseInt(jT_atencion.getText())) {
-            jT_WQ.setText(decimal.format(wq()));
+        try
+        {
+            jT_Y.setText(decimal.format(y()));
+            jT_U.setText(decimal.format((Double.parseDouble(jT_atencion.getText()) / Double.parseDouble(jT_tiempo.getText()))));
+            jT_P.setText(decimal.format((p() * 100)) + " %");
+            jT_LS.setText(decimal.format(ls()));
+            jT_WS.setText(decimal.format(ws()));
+            jL_ProbabiN.setText(decimal.format((nEle() * 100)) + " %");
+            if (Integer.parseInt(jT_n.getText()) > Integer.parseInt(jT_atencion.getText()))
+            {
+                jT_WQ.setText(decimal.format(wq()));
 
-        } else {
-            //jT_WQ.setText(decimal.format(u()));
+            } else
+            {
+                jT_WQ.setText(decimal.format(u()));
+            }
+
+            jT_LQ.setText(decimal.format(lq()));
+            jT_0.setText(sin());
+
+        } catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Favor de rrellenar datos", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
-        jT_LQ.setText(decimal.format(lq()));
-        jT_0.setText(sin());
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jT_atencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_atencionActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jT_0.setText(null);
+        jT_LQ.setText(null);
+        jT_LS.setText(null);
+        jT_P.setText(null);
+        jT_U.setText(null);
+        jT_WQ.setText(null);
+        jT_WS.setText(null);
+        jT_Y.setText(null);
+        jT_atencion.setText(null);
+        jT_n.setText(null);
+        jT_nEle.setText(null);
+        jT_tiempo.setText("60");
+        jL_ProbabiN.setText("0%");
+
         // TODO add your handling code here:
-    }//GEN-LAST:event_jT_atencionActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,20 +421,27 @@ public class Colas extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(Colas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(Colas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(Colas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(Colas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -378,8 +456,10 @@ public class Colas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jL_ProbabiN;
     private javax.swing.JLabel jL_titulo;
+    private javax.swing.JLabel jL_titulo1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -407,6 +487,7 @@ public class Colas extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField jT_0;
     private javax.swing.JTextField jT_LQ;
     private javax.swing.JTextField jT_LS;
